@@ -6,7 +6,7 @@ package com.example.jingyunyang.csci3130_a2_3;
 
 public class Validator {
 
-    static int[] validate(String inputPassword){
+    static int[] getArrary(String inputPassword){
             int correctRuleArray[] = {0, 0, 0, 0, 0};               // array storing whether rule is correct
             int passedRules = 0;
             if (!inputPassword.equals( "password"))               // rule 1: check if password is "password"
@@ -22,6 +22,13 @@ public class Validator {
                 correctRuleArray[4] = 1;
             return correctRuleArray;
         }
+    // count the correct rules
+    static int validate(int[] array){
+        int count = 0;
+        for(int i=0; i< array.length;i++)
+            count += array[i];
+        return count;
+    }
 
 
 
